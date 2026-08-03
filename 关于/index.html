@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="This is a test page for i18n support.\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="我想以更具有可维护性的形式给自己每天手写的自我省察留档。同时，也希望自己写下的文字能够有机会帮助或者启发他人，期望能有一个与更多的灵魂进行思想交流的场所、一个记录关于生活中形形色色事物的所思所想的地方。因此，这个博客诞生了。\n">
 <title>关于</title>
 
 <link rel='canonical' href='https://TitusAtaraxius.github.io/%E5%85%B3%E4%BA%8E/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="关于">
-<meta property='og:description' content="This is a test page for i18n support.\n">
+<link rel="stylesheet" href="/scss/style.min.fe3ee078f2a3bbfdcaf11c7347b358d1f634555bf48066144b2edd3edd4cd4b0.css"><meta property='og:title' content="关于">
+<meta property='og:description' content="我想以更具有可维护性的形式给自己每天手写的自我省察留档。同时，也希望自己写下的文字能够有机会帮助或者启发他人，期望能有一个与更多的灵魂进行思想交流的场所、一个记录关于生活中形形色色事物的所思所想的地方。因此，这个博客诞生了。\n">
 <meta property='og:url' content='https://TitusAtaraxius.github.io/%E5%85%B3%E4%BA%8E/'>
 <meta property='og:site_name' content='在电子的廊下'>
 <meta property='og:type' content='article'><meta property='article:section' content='Page' />
 <meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="This is a test page for i18n support.\n">
+<meta name="twitter:description" content="我想以更具有可维护性的形式给自己每天手写的自我省察留档。同时，也希望自己写下的文字能够有机会帮助或者启发他人，期望能有一个与更多的灵魂进行思想交流的场所、一个记录关于生活中形形色色事物的所思所想的地方。因此，这个博客诞生了。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -295,7 +295,9 @@
     <section class="article-content">
     
     
-    <p>This is a test page for i18n support.</p>
+    <p>我想以更具有可维护性的形式给自己每天手写的自我省察留档。同时，也希望自己写下的文字能够有机会帮助或者启发他人，期望能有一个与更多的灵魂进行思想交流的场所、一个记录关于生活中形形色色事物的所思所想的地方。因此，这个博客诞生了。</p>
+<p>博客的内容包括但不限于每日省察的记录（说明一下，其中的内容都是与自我的对话，用“你”只是形式使然，请屏幕前的各位放心）、关于阅读与游戏的感悟与思考、关于编程等计算机技术的心得体会，可能还会有一些写作内容。当然，总归是以每日省察为主。</p>
+<p>这里没有什么对我个人的介绍，只是希望大家通过我的作为而非表象来认识我。总之，欢迎进行思想交流。</p>
 
 </section>
 
@@ -386,11 +388,7 @@
         
         2026 TitusAtaraxius
     </section>
-    
-    <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
-    </section>
+
 </footer>
 
 
@@ -490,6 +488,91 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<style>
+    #TableOfContents > ul, ol {
+        ul, ol {
+            display: none;
+        }
+        .open {
+            display: block;
+        }
+    }
+	#backTopBtn {
+	    display: none;
+	    position: fixed;
+	    bottom: 30px;
+	    z-index: 99;
+	    cursor: pointer;
+	    width: 30px;
+	    height: 30px;
+	    background-image: url(https://TitusAtaraxius.github.io/icons/backTop.svg);
+	}
+</style>
 
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+	
+
+	function initScrollTop() {
+	    let rightSideBar = document.querySelector(".right-sidebar");
+	    if (!rightSideBar) {
+	        return;
+	    }
+	    
+	    let btn = document.createElement("div");
+	    btn.id = "backTopBtn";
+	    btn.onclick = backToTop
+	    rightSideBar.appendChild(btn)
+	    
+	    window.onscroll = function() {
+	        
+	        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+	            btn.style.display = "block";
+	        } else {
+	            btn.style.display = "none";
+	        }
+	    };
+	}
+	
+	
+
+	function backToTop(){
+	    window.scrollTo({ top: 0, behavior: "smooth" })
+	}
+	
+	initScrollTop();
+</script>
     </body>
 </html>

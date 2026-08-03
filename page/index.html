@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://TitusAtaraxius.github.io/page/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Pages">
+<link rel="stylesheet" href="/scss/style.min.fe3ee078f2a3bbfdcaf11c7347b358d1f634555bf48066144b2edd3edd4cd4b0.css"><meta property='og:title' content="Pages">
 <meta property='og:description' content="这里是记录斯多葛式每日省察，以及阅读、编程、游戏相关探究与思考的个人博客。希望这里的内容能对你有所帮助。如果想了解更多，可移步“关于”。">
 <meta property='og:url' content='https://TitusAtaraxius.github.io/page/'>
 <meta property='og:site_name' content='在电子的廊下'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-08-03T13:14:43&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-08-02T00:00:00&#43;00:00 '/>
 <meta name="twitter:title" content="Pages">
 <meta name="twitter:description" content="这里是记录斯多葛式每日省察，以及阅读、编程、游戏相关探究与思考的个人博客。希望这里的内容能对你有所帮助。如果想了解更多，可移步“关于”。"><link rel="alternate" type="application/rss&#43;xml" href="https://TitusAtaraxius.github.io/page/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -308,7 +308,7 @@
                     <a href="/archives/#2026">
                         
                             <span class="year">2026</span>
-                            <span class="count">2</span>
+                            <span class="count">1</span>
                         
                     </a> 
                 </div>
@@ -336,32 +336,12 @@
     <div class="tagCloud-tags">
         
             <a href="/categories/%E7%9C%81%E5%AF%9F%E5%BD%95/" class="font_size_1">
-                省察录
+                Test
             </a>
         
     </div>
 </section>
 
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
-  <circle cx="9" cy="9" r="2" />
-</svg>
-
-
-
-    </div>
-    <h2 class="widget-title section-title">标签云</h2>
-
-    <div class="tagCloud-tags">
-        
-    </div>
-</section>
             
         
     </aside>
@@ -391,7 +371,7 @@
         <div class="article-details">
             <h2 class="article-title">归档</h2>
             <footer class="article-time">
-                <time datetime='2019-05-28T00:00:00Z'>28286-08-28</time>
+                <time datetime='2019-05-28T00:00:00Z'>2019-05-28</time>
             </footer>
         </div>
     </a>
@@ -402,7 +382,7 @@
         <div class="article-details">
             <h2 class="article-title">关于</h2>
             <footer class="article-time">
-                <time datetime='0001-01-01T00:00:00Z'>1016-08-01</time>
+                <time datetime='0001-01-01T00:00:00Z'>0001-01-01</time>
             </footer>
         </div>
     </a>
@@ -413,7 +393,7 @@
         <div class="article-details">
             <h2 class="article-title">搜索</h2>
             <footer class="article-time">
-                <time datetime='0001-01-01T00:00:00Z'>1016-08-01</time>
+                <time datetime='0001-01-01T00:00:00Z'>0001-01-01</time>
             </footer>
         </div>
     </a>
@@ -424,7 +404,7 @@
         <div class="article-details">
             <h2 class="article-title">友链</h2>
             <footer class="article-time">
-                <time datetime='0001-01-01T00:00:00Z'>1016-08-01</time>
+                <time datetime='0001-01-01T00:00:00Z'>0001-01-01</time>
             </footer>
         </div>
     </a>
@@ -437,11 +417,7 @@
         
         2026 TitusAtaraxius
     </section>
-    
-    <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
-    </section>
+
 </footer>
 
 
@@ -463,6 +439,91 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<style>
+    #TableOfContents > ul, ol {
+        ul, ol {
+            display: none;
+        }
+        .open {
+            display: block;
+        }
+    }
+	#backTopBtn {
+	    display: none;
+	    position: fixed;
+	    bottom: 30px;
+	    z-index: 99;
+	    cursor: pointer;
+	    width: 30px;
+	    height: 30px;
+	    background-image: url(https://TitusAtaraxius.github.io/icons/backTop.svg);
+	}
+</style>
 
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+	
+
+	function initScrollTop() {
+	    let rightSideBar = document.querySelector(".right-sidebar");
+	    if (!rightSideBar) {
+	        return;
+	    }
+	    
+	    let btn = document.createElement("div");
+	    btn.id = "backTopBtn";
+	    btn.onclick = backToTop
+	    rightSideBar.appendChild(btn)
+	    
+	    window.onscroll = function() {
+	        
+	        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+	            btn.style.display = "block";
+	        } else {
+	            btn.style.display = "none";
+	        }
+	    };
+	}
+	
+	
+
+	function backToTop(){
+	    window.scrollTo({ top: 0, behavior: "smooth" })
+	}
+	
+	initScrollTop();
+</script>
     </body>
 </html>
